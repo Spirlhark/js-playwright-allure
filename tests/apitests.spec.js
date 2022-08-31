@@ -142,3 +142,28 @@ test('Delete entry', async ({ request, baseURL }, testInfo) => {
     });
     expect(deleteEntry.status()).toBe(201);
 });
+
+test('Put entry faild', async ({ request, baseURL }, testInfo) => {
+    //PUT
+    const putEntry = await request.put(`${baseURL}/booking/${id}`, {
+        headers,
+        data : doc.bookingPut
+    });
+    let requestPut = {
+        URL: `${baseURL}/booking/${id}`,
+        headers: headers,
+        body: doc.bookingPut
+    };
+    expect(putEntry.status()).toBe(200);
+    expect(putEntry.ok()).toBeTruthy();
+    await testInfo.attach("REQUEST", {
+        body: JSON.stringify(requestPut),
+    });
+    let a = await putEntry.json();
+    await testInfo.attach("RESPONSE", {
+        body: JSON.stringify(a),
+    });
+    await testInfo.attach("STATUS", {
+    body: JSON.stringify(putEntry.status()),
+    });
+});
