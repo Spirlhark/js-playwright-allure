@@ -1,0 +1,8 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Wed Aug 31 20:05:48 GMT 2022","Wed Aug 31 20:05:48 GMT 2022","187","Google Chrome","apitests.spec.js","","","","Ping site",""
+"passed","Wed Aug 31 20:05:49 GMT 2022","Wed Aug 31 20:05:49 GMT 2022","69","Google Chrome","apitests.spec.js","","","","Сreate a new entry",""
+"passed","Wed Aug 31 20:05:49 GMT 2022","Wed Aug 31 20:05:49 GMT 2022","86","Google Chrome","apitests.spec.js","","","","Put entry",""
+"failed","Wed Aug 31 20:05:50 GMT 2022","Wed Aug 31 20:05:50 GMT 2022","115","Google Chrome","apitests.spec.js","","","","Put entry faild",""
+"passed","Wed Aug 31 20:05:49 GMT 2022","Wed Aug 31 20:05:49 GMT 2022","82","Google Chrome","apitests.spec.js","","","","Patch entry",""
+"passed","Wed Aug 31 20:05:49 GMT 2022","Wed Aug 31 20:05:49 GMT 2022","56","Google Chrome","apitests.spec.js","","","","Delete entry",""
+"passed","Wed Aug 31 20:05:48 GMT 2022","Wed Aug 31 20:05:49 GMT 2022","120","Google Chrome","apitests.spec.js","","","","Add token",""
