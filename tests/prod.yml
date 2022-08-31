@@ -1,0 +1,27 @@
+signIn:
+  username: admin
+  password: password123
+
+bookingPost:
+  firstname: Dimasya
+  lastname: Spirl
+  totalprice: 101
+  depositpaid: true
+  bookingdates:
+    checkin: 2022-01-01
+    checkout: 2022-02-01
+  additionalneeds: Breakfast
+
+bookingPut:
+  firstname: Dimon4ik
+  lastname: Spirl
+  totalprice: 150
+  depositpaid: true
+  bookingdates:
+    checkin: 2022-01-01
+    checkout: 2022-03-15
+  additionalneeds: Breakfast
+
+bookingPatch:
+  firstname: Dimon
+  lastname: Spirlhark
