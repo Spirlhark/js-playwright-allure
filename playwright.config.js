@@ -39,6 +39,8 @@ const config = {
   use: {
     // All requests we send go to this API endpoint.
     baseURL: 'https://restful-booker.herokuapp.com',
+    screenshot: "on",
+    video: "on",
     extraHTTPHeaders: {
       // We set this header per GitHub guidelines.
       'Accept': 'application/json',
