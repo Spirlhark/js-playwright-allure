@@ -18,7 +18,7 @@ jobs:
       - uses: microsoft/playwright-github-action@v1
 
       - name: Install dependencies and run tests
-        run: npm install && npm test --alluredir=allure-results
+        run: npm install && npx playwright install && npm test --alluredir=allure-results
 
       - name: Show report
         if: always()
