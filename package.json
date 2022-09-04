@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "api_test": "npx playwright test api_test/api_tests.spec.js --project=Booking_API --reporter=line,allure-playwright",
-    "ui_test": "npx playwright test ui_tests/ui_tests.spec.js --project=Booking_UI --headed --reporter=line,allure-playwright",
+    "ui_test": "npx playwright test ui_tests/ui_tests.spec.js --project=Booking_UI --reporter=line,allure-playwright",
     "test": "npm run api_test || npm run ui_test",
     "allure_results": "allure generate allure-results -o allure-report --clean",
     "allure_report": "allure open allure-report",
