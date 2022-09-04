@@ -1,5 +1,6 @@
 import { expect, test } from "@playwright/test";
-import { allure } from "allure-playwright";
+// import { allure } from "allure-playwright";
+import { allure, LabelName } from "allure-playwright";
 const yaml = require('js-yaml');
 const fs   = require('fs');
 const doc = yaml.load(fs.readFileSync("tests/prod.yml", 'utf8'));
@@ -10,9 +11,16 @@ let headers = {
 };
 
 
-test('Ping site', async ({ request, baseURL }, testInfo) => {
+test('[bk-1] GET/ping', async ({ request, baseURL }, testInfo) => {
+    allure.label({ name: LabelName.LANGUAGE, value: "javascript" });
     //Ping site
     allure.link({ url: `${baseURL}`, name: "Welcome to Restful-Booker" });
+    let requestPing = {
+        URL: `${baseURL}/ping`
+    };
+    await testInfo.attach("REQUEST", {
+        body: JSON.stringify(requestPing),
+    });
     const ping = await request.get(`${baseURL}/ping`, {
     });
     expect(ping.status()).toBe(201);
@@ -24,7 +32,7 @@ test('Ping site', async ({ request, baseURL }, testInfo) => {
     // console.log("первое");
 });
 
-test('Add token', async ({ request, baseURL }, testInfo) => {
+test('[bk-2] POST/auth', async ({ request, baseURL }, testInfo) => {
     // Add token
     let requestAuth = {
         URL: `${baseURL}/auth`,
@@ -49,7 +57,7 @@ test('Add token', async ({ request, baseURL }, testInfo) => {
     // console.log("второе");
 });
 
-test('Сreate a new entry', async ({ request, baseURL }, testInfo) => {
+test('[bk-3] POST/booking', async ({ request, baseURL }, testInfo) => {
     //CREATE
     const createEntry = await request.post(`${baseURL}/booking`, {
         data: doc.bookingPost
@@ -73,7 +81,7 @@ test('Сreate a new entry', async ({ request, baseURL }, testInfo) => {
     });
 });
 
-test('Put entry', async ({ request, baseURL }, testInfo) => {
+test('[bk-4] PUT/booking{id}', async ({ request, baseURL }, testInfo) => {
     //PUT
     const putEntry = await request.put(`${baseURL}/booking/${id}`, {
         headers,
@@ -98,7 +106,7 @@ test('Put entry', async ({ request, baseURL }, testInfo) => {
     });
 });
 
-test('Patch entry', async ({ request, baseURL }, testInfo) => {
+test('[bk-5] PATCH/booking{id}', async ({ request, baseURL }, testInfo) => {
     //PATCH
     const patchEntry = await request.patch(`${baseURL}/booking/${id}`, {
         headers,
@@ -122,7 +130,7 @@ test('Patch entry', async ({ request, baseURL }, testInfo) => {
     });
 });
 
-test('Delete entry', async ({ request, baseURL }, testInfo) => {
+test('[bk-6] DELETE/booking{id}', async ({ request, baseURL }, testInfo) => {
     //DELETE
     const deleteEntry = await request.delete(`${baseURL}/booking/${id}`, {
         headers
@@ -143,7 +151,7 @@ test('Delete entry', async ({ request, baseURL }, testInfo) => {
     expect(deleteEntry.status()).toBe(201);
 });
 
-test('Put entry faild', async ({ request, baseURL }, testInfo) => {
+test('[bk-7] PUT/booking{id} - faild', async ({ request, baseURL }, testInfo) => {
     //PUT
     const putEntry = await request.put(`${baseURL}/booking/${id}`, {
         headers,
@@ -154,11 +162,11 @@ test('Put entry faild', async ({ request, baseURL }, testInfo) => {
         headers: headers,
         body: doc.bookingPut
     };
-    expect(putEntry.status()).toBe(200);
-    expect(putEntry.ok()).toBeTruthy();
     await testInfo.attach("REQUEST", {
         body: JSON.stringify(requestPut),
     });
+    expect(putEntry.status()).toBe(200);
+    expect(putEntry.ok()).toBeTruthy();
     let a = await putEntry.json();
     await testInfo.attach("RESPONSE", {
         body: JSON.stringify(a),

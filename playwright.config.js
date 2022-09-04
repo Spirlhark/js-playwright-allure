@@ -14,6 +14,11 @@ const { devices } = require('@playwright/test');
  */
 const config = {
 
+  reporter: [['line'], ['allure-playwright', {
+    detail: false,
+    outputFolder: 'allure-results',
+    suiteTitle: true,
+  }]],
   testDir: './tests',
   /* Maximum time one test can run for. */
   timeout: 30 * 1000,
@@ -33,7 +38,7 @@ const config = {
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : 1,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
+  // reporter: 'html',
   // reporter: [['line'], ['allure-playwright']],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
@@ -61,7 +66,14 @@ const config = {
   /* Configure projects for major browsers */
   projects: [
     {
-      name: 'chromium',
+      name: 'Booking_API',
+      use: {
+        ...devices['Desktop Chrome'],
+      },
+    },
+
+    {
+      name: 'Booking_UI',
       use: {
         ...devices['Desktop Chrome'],
       },
