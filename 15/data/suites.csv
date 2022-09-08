@@ -1,0 +1,8 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Thu Sep 08 12:37:07 GMT 2022","Thu Sep 08 12:37:07 GMT 2022","83","Booking_API","api_test/api_tests.spec.js","","","","[bk-4] PUT/booking{id}",""
+"passed","Thu Sep 08 12:37:08 GMT 2022","Thu Sep 08 12:37:08 GMT 2022","68","Booking_API","api_test/api_tests.spec.js","","","","[bk-6] DELETE/booking{id}",""
+"failed","Thu Sep 08 12:37:09 GMT 2022","Thu Sep 08 12:37:09 GMT 2022","90","Booking_API","api_test/api_tests.spec.js","","","","[bk-7] PUT/booking{id} - faild",""
+"passed","Thu Sep 08 12:37:07 GMT 2022","Thu Sep 08 12:37:07 GMT 2022","88","Booking_API","api_test/api_tests.spec.js","","","","[bk-1] GET/ping",""
+"passed","Thu Sep 08 12:37:07 GMT 2022","Thu Sep 08 12:37:08 GMT 2022","88","Booking_API","api_test/api_tests.spec.js","","","","[bk-5] PATCH/booking{id}",""
+"passed","Thu Sep 08 12:37:07 GMT 2022","Thu Sep 08 12:37:07 GMT 2022","57","Booking_API","api_test/api_tests.spec.js","","","","[bk-3] POST/booking",""
+"passed","Thu Sep 08 12:37:07 GMT 2022","Thu Sep 08 12:37:07 GMT 2022","68","Booking_API","api_test/api_tests.spec.js","","","","[bk-2] POST/auth",""
