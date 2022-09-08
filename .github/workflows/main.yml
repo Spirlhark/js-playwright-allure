@@ -30,7 +30,8 @@ jobs:
         if: success()
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-        uses: voxmedia/github-action-slack-notify-build@v1
+        # uses: voxmedia/github-action-slack-notify-build@v1
+        uses : act10ns/slack@v1
         with:
           channel: aqa-notification
           status: SUCCESS
@@ -39,7 +40,8 @@ jobs:
         if: failure()
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-        uses: voxmedia/github-action-slack-notify-build@v1
+        # uses: voxmedia/github-action-slack-notify-build@v1
+        uses : act10ns/slack@v1
         with:
           channel: aqa-notification
           status: FAILED
@@ -51,7 +53,8 @@ jobs:
         if: success()
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-        uses: voxmedia/github-action-slack-notify-build@v1
+        # uses: voxmedia/github-action-slack-notify-build@v1
+        uses : act10ns/slack@v1
         with:
           channel: aqa-notification
           status: SUCCESS
@@ -60,7 +63,8 @@ jobs:
         if: failure()
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-        uses: voxmedia/github-action-slack-notify-build@v1
+        # uses: voxmedia/github-action-slack-notify-build@v1
+        uses : act10ns/slack@v1
         with:
           channel: aqa-notification
           status: FAILED
