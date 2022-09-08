@@ -58,7 +58,7 @@ jobs:
         uses : act10ns/slack@v1
         with:
           status: ${{ job.status }}
-          steps: ${{ toJson(steps) }}
-          text: https://spirlhark.github.io/test/
+          # steps: ${{ toJson(steps) }}
+          message: https://spirlhark.github.io/test/
           channel: '#aqa-notification'
         if: always()
