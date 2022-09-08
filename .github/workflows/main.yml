@@ -59,5 +59,6 @@ jobs:
         with:
           status: ${{ job.status }}
           steps: ${{ toJson(steps) }}
+          text: https://spirlhark.github.io/test/
           channel: '#aqa-notification'
         if: always()
