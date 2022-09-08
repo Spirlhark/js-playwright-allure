@@ -1,0 +1,1 @@
+{"URL":"https://restful-booker.herokuapp.com/booking/543","headers":{"Accept":"application/json","Content-Type":"application/json","Cookie":"token=7457fac846bde51"},"body":{"firstname":"Dimon4ik","lastname":"Spirl","totalprice":150,"depositpaid":true,"bookingdates":{"checkin":"2022-01-01T00:00:00.000Z","checkout":"2022-03-15T00:00:00.000Z"},"additionalneeds":"Breakfast"}}
