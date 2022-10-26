@@ -25,6 +25,7 @@ jobs:
 
 
       - name: Run tests API
+        if: always()
         run: npx playwright test api_test/api_tests.spec.js --project=Booking_API --reporter=line,allure-playwright
 #       - name: Notify slack success
 #         if: success()
@@ -48,6 +49,7 @@ jobs:
 #           color: danger
           
       - name: Run tests UI
+        if: always()
         run: npx playwright test ui_tests/ui_tests.spec.js --project=Booking_UI --reporter=line,allure-playwright
 #       - name: Notify slack success
 #         if: success()
