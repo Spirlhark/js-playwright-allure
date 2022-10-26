@@ -8,8 +8,8 @@ jobs:
   e2e-tests:
     runs-on: ubuntu-latest # or macos-latest, windows-latest
     
-    env:
-      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+#     env:
+#       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
 
     steps:
       - uses: actions/checkout@v2
@@ -26,49 +26,49 @@ jobs:
 
       - name: Run tests API
         run: npx playwright test api_test/api_tests.spec.js --project=Booking_API --reporter=line,allure-playwright
-      - name: Notify slack success
-        if: success()
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-        # uses: voxmedia/github-action-slack-notify-build@v1
-        uses : act10ns/slack@v1
-        with:
-          channel: aqa-notification
-          status: SUCCESS
-          color: good
-      - name: Notify slack fail
-        if: failure()
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-        # uses: voxmedia/github-action-slack-notify-build@v1
-        uses : act10ns/slack@v1
-        with:
-          channel: aqa-notification
-          status: FAILED
-          color: danger
+#       - name: Notify slack success
+#         if: success()
+#         env:
+#           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+#         # uses: voxmedia/github-action-slack-notify-build@v1
+#         uses : act10ns/slack@v1
+#         with:
+#           channel: aqa-notification
+#           status: SUCCESS
+#           color: good
+#       - name: Notify slack fail
+#         if: failure()
+#         env:
+#           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+#         # uses: voxmedia/github-action-slack-notify-build@v1
+#         uses : act10ns/slack@v1
+#         with:
+#           channel: aqa-notification
+#           status: FAILED
+#           color: danger
           
       - name: Run tests UI
         run: npx playwright test ui_tests/ui_tests.spec.js --project=Booking_UI --reporter=line,allure-playwright
-      - name: Notify slack success
-        if: success()
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-        # uses: voxmedia/github-action-slack-notify-build@v1
-        uses : act10ns/slack@v1
-        with:
-          channel: aqa-notification
-          status: SUCCESS
-          color: good
-      - name: Notify slack fail
-        if: failure()
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-        # uses: voxmedia/github-action-slack-notify-build@v1
-        uses : act10ns/slack@v1
-        with:
-          channel: aqa-notification
-          status: FAILED
-          color: danger
+#       - name: Notify slack success
+#         if: success()
+#         env:
+#           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+#         # uses: voxmedia/github-action-slack-notify-build@v1
+#         uses : act10ns/slack@v1
+#         with:
+#           channel: aqa-notification
+#           status: SUCCESS
+#           color: good
+#       - name: Notify slack fail
+#         if: failure()
+#         env:
+#           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+#         # uses: voxmedia/github-action-slack-notify-build@v1
+#         uses : act10ns/slack@v1
+#         with:
+#           channel: aqa-notification
+#           status: FAILED
+#           color: danger
 
       - name: Show report
         if: always()
