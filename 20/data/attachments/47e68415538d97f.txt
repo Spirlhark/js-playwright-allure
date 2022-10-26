@@ -1,0 +1,1 @@
+{"bookingid":3180,"booking":{"firstname":"Dimasya","lastname":"Spirl","totalprice":101,"depositpaid":true,"bookingdates":{"checkin":"2022-01-01","checkout":"2022-02-01"},"additionalneeds":"Breakfast"}}
