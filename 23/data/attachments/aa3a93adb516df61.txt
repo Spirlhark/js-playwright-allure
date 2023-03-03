@@ -1,0 +1,1 @@
+{"URL":"https://restful-booker.herokuapp.com/booking/1289","headers":{"Accept":"application/json","Content-Type":"application/json","Cookie":"token=c33716d69723379"}}
