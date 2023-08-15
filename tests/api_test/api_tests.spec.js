@@ -29,7 +29,7 @@ test('[bk-1] GET/ping', async ({ request, baseURL }, testInfo) => {
     });
     expect(ping.ok()).toBeTruthy();
     expect(ping.status()).toBe(201);
-    // console.log("первое");
+    console.log("This request DONE !!!!");
 });
 
 test('[bk-2] POST/auth', async ({ request, baseURL }, testInfo) => {
